@@ -1,0 +1,50 @@
+body {
+  background-color: #4B5D67;
+  text-align: center;
+}
+
+.heading {
+  font-family: 'Press Start 2P', cursive;
+  padding: 3rem;
+  color: #BDF2D5;
+  font-size: 4rem;
+  line-height: 5rem;
+}
+
+/* BUTTON DESIGN*/
+.btn {
+  height: 200px;
+  width: 200px;
+  margin: 20px;
+  border-radius: 20px;
+  border-width: thick;
+  border-color: white;
+}
+
+/* BUTTON COLOURS */
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+/* BUTTON COLOUR ON PRESSING */
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+/* GAME OVER DESIGN */
+.game-over {
+  background-color: red;
+}
