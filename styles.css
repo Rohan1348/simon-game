@@ -21,6 +21,13 @@ body {
   border-color: white;
 }
 
+.start-btn {
+  height: 50px;
+  width: 100px;
+  margin: 0 20px;
+  border-radius: 20px;
+}
+
 /* BUTTON COLOURS */
 .red {
   background-color: red;

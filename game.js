@@ -6,7 +6,7 @@ var started = false;
 var level = 0;
 
 // BEGINING GAME WITH KEYPRESS ONLY
-$(document).keydown(function() { // ---> GAME BEGINS WITH THE KEY PRESSED
+$(".start-btn").click(function() { // ---> GAME BEGINS WITH THE KEY PRESSED
   if (!started) { // ---> KEY IS PRESSED FIRST TIME AND WE ENTER THE IF CONDITION SINCE (!FALSE = TRUE)
     $(".heading").text("LEVEL " + level);
     nextSequence(); // ---> THIS IS THE FIRST TIME A RANDOM BUTTON IS GENERATED
@@ -81,3 +81,40 @@ function startOver() {
   started = false;
   gamePattern = []; // ---> RESETTING THE GAME PATTERN ARRAY(CLEAR THE MEMORY OF RANDOM BUTTONS GENERATED)
 }
+
+
+
+
+
+if (annyang) {
+  var commands = {
+      'red': function() { handleVoiceCommand('red'); },
+      'blue': function() { handleVoiceCommand('blue'); },
+      'green': function() { handleVoiceCommand('green'); },
+      'yellow': function() { handleVoiceCommand('yellow'); }
+  };
+
+  annyang.addCommands(commands);
+
+  annyang.addCallback('end', function() {
+    annyang.start();
+});
+
+  annyang.start({ continuous: true });
+}
+
+function handleVoiceCommand(color) {
+  userClickedPattern.push(color);
+  animatePress(color);
+  playSound(color);
+  checkAnswer(userClickedPattern.length - 1);
+}
+
+// Adding buttons to control listening
+// document.getElementById('start-btn').addEventListener('click', function() {
+//   annyang.start();
+// });
+
+// document.getElementById('stop-btn').addEventListener('click', function() {
+//   annyang.abort();
+// });
